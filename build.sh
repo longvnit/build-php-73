@@ -7,7 +7,7 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 SCRIPT_VERSION=1.0
-BUILD_DIR=/root/build
+BUILD_DIR=/root/custombuild
 BUILD_SERVER="http://files.directadmin.com/services/custombuild"
 mkdir -p ${BUILD_DIR}
 chmod 700 ${BUILD_DIR}
@@ -50,10 +50,10 @@ if ! echo "${PATH}" | grep -qF -m1 '/usr/local/bin:'; then
 fi
 
 # Common pre-install
-#yum install -y wget tar gcc gcc-c++ flex bison make bind bind-libs bind-utils openssl openssl-devel perl quota libaio \
-#libcom_err-devel libcurl-devel gd zlib-devel zip unzip libcap-devel cronie bzip2 cyrus-sasl-devel perl-ExtUtils-Embed \
-#autoconf automake libtool which patch mailx bzip2-devel lsof glibc-headers kernel-devel expat-devel \
-#psmisc net-tools systemd-devel libdb-devel perl-DBI perl-Perl4-CoreLibs perl-libwww-perl xfsprogs rsyslog logrotate crontabs file kernel-headers
+yum install -y wget tar gcc gcc-c++ flex bison make bind bind-libs bind-utils openssl openssl-devel perl quota libaio \
+libcom_err-devel libcurl-devel gd zlib-devel zip unzip libcap-devel cronie bzip2 cyrus-sasl-devel perl-ExtUtils-Embed \
+autoconf automake libtool which patch mailx bzip2-devel lsof glibc-headers kernel-devel expat-devel \
+psmisc net-tools systemd-devel libdb-devel perl-DBI perl-Perl4-CoreLibs perl-libwww-perl xfsprogs rsyslog logrotate crontabs file kernel-headers
 
 # Start build 
 AUTOCONF="autoconf-2.69"
